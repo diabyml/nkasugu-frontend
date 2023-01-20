@@ -1,0 +1,3 @@
+mutation LoadCountry($countryCode: String!) {
+  loadCountry(countryCode: $countryCode)
+}

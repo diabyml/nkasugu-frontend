@@ -1,0 +1,4 @@
+fragment CitySnippet on City {
+    id
+    name
+}

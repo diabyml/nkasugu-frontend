@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('/assets/SuisseIntl-Regular.eot');
+    src: url('/assets/SuisseIntl-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/SuisseIntl-Regular.woff2') format('woff2'),
+        url('/assets/SuisseIntl-Regular.woff') format('woff'),
+        url('/assets/SuisseIntl-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Suisse Int', sans-serif;
+}
+
+.flowting-label {
+    transition: all 0.15s ease-in-out;
+}
+
+
+
+/* CUSTOMIZE TAB COMPONENT */
+.css-1pjn7in {
+    color: #616161 !important;
+}
+
+.css-1pjn7in[aria-selected=true], .css-1pjn7in[data-selected] {
+    color: #010101 !important;
+    font-weight: bold !important;
+}

@@ -1,0 +1,14 @@
+mutation EditUser(
+  $userId: String!
+  $username: String!
+  $email: String!
+  $cityId: String!
+  $phone: String!
+) {
+  editUser(
+    userId: $userId
+    data: { username: $username, email: $email, phone: $phone, cityId: $cityId }
+  ) {
+    ...UserSnippet
+  }
+}

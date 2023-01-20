@@ -1,0 +1,7 @@
+fragment CountrySnipppet on Country {
+    id
+    flag
+    name
+    code
+    phoneCode
+}

@@ -1,0 +1,31 @@
+fragment ProductFragment on Product {
+  id
+  slug
+  name
+  description
+  price
+  createdAt
+  images {
+    id
+    url
+    secureUrl
+    publicId
+    createdAt
+    updatedAt
+    variant
+  }
+  country {
+    id
+    name
+    flag
+  }
+  city {
+    id
+    name
+  }
+  user {
+    id
+    username
+    phone
+  }
+}

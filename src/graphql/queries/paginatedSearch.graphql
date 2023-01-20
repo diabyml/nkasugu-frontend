@@ -1,0 +1,18 @@
+query PaginatedSearch(
+  $query: String!
+  $countryId: String!
+  $skip: Int
+  $limit: Int
+) {
+  paginatedSearch(
+    countryId: $countryId
+    query: $query
+    skip: $skip
+    limit: $limit
+  ) {
+    hasMore
+    data {
+      ...ProductFragment
+    }
+  }
+}

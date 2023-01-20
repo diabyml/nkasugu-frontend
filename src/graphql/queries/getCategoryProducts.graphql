@@ -1,0 +1,16 @@
+query GetCategoryProducts(
+  $cursor: String
+  $limit: Int
+  $countryId: String!
+  $categoryId: String
+) {
+  categoryProducts: products(
+    categoryId: $categoryId
+    data: { cursor: $cursor, limit: $limit, countryId: $countryId }
+  ) {
+    hasMore
+    data {
+      ...ProductFragment
+    }
+  }
+}

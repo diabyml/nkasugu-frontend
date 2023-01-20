@@ -1,0 +1,5 @@
+query GetProduct($slug: String, $id: String) {
+  product(slug: $slug, id: $id) {
+    ...ProductFragment
+  }
+}

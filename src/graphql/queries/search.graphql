@@ -1,0 +1,16 @@
+query Search($query: String!, $countryId: String!) {
+  search(query: $query, countryId: $countryId) {
+    id
+    name
+    slug
+    images {
+      id
+      url
+      secureUrl
+      publicId
+      createdAt
+      updatedAt
+      variant
+    }
+  }
+}

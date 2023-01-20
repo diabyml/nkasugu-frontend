@@ -1,0 +1,13 @@
+fragment UserSnippet on User {
+    id
+    username
+    email
+    phone
+    role
+    country {
+        ...CountrySnipppet
+    }
+    city {
+        ...CitySnippet
+    }
+}

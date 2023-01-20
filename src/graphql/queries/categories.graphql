@@ -1,0 +1,7 @@
+query GetCategories($parentId: String) {
+  categories(parentId:$parentId){
+    id
+    name
+    parentId
+  }
+}

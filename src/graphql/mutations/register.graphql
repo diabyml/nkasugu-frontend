@@ -1,0 +1,11 @@
+mutation Register($username:String!,$email:String!,$password:String!,$countryId:String!,$cityId:String!,$phone:String!) {
+  register(data:{username:$username,email:$email,password:$password,phone:$phone,countryId:$countryId,cityId:$cityId}) {
+    user{
+      ...UserSnippet
+    }
+    errors {
+      field
+      message
+    }
+  }
+}

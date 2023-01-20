@@ -1,0 +1,27 @@
+mutation EditProduct(
+  $image1: Upload
+  $image2: Upload
+  $image3: Upload
+  $name: String
+  $price: String
+  $description: String
+  $slug: String
+  $productId: String!
+  $productImagesIds: String!
+) {
+  editProduct(
+    image1: $image1
+    image2: $image2
+    image3: $image3
+    data: {
+      name: $name
+      price: $price
+      description: $description
+      slug: $slug
+      productId: $productId
+      productImagesIds: $productImagesIds
+    }
+  ) {
+    ...ProductFragment
+  }
+}

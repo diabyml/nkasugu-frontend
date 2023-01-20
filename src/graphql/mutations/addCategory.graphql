@@ -1,0 +1,5 @@
+mutation AddCategory($categoryOrCategories: String!, $parentId: String) {
+  addCategory(
+    data: { categoryOrCategories: $categoryOrCategories, parentId: $parentId }
+  )
+}

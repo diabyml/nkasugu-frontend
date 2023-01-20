@@ -1,0 +1,39 @@
+mutation AddProduct(
+  $image1: Upload!
+  $image2: Upload
+  $image3: Upload
+  $name: String!
+  $price: String!
+  $userId: String!
+  $cityId: String!
+  $countryId: String!
+  $categoryId: String!
+  $subCategoryId: String!
+  $description: String
+  $slug: String!
+) {
+  addProduct(
+    image1: $image1
+    image2: $image2
+    image3: $image3
+    data: {
+      name: $name
+      price: $price
+      description: $description
+      userId: $userId
+      cityId: $cityId
+      countryId: $countryId
+      categoryId: $categoryId
+      subCategoryId: $subCategoryId
+      slug: $slug
+    }
+  ) {
+    errors {
+      field
+      message
+    }
+    product {
+      slug
+    }
+  }
+}

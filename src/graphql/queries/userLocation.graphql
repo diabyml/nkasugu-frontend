@@ -1,0 +1,11 @@
+query UserLocation($countryCode: String!) {
+  userLocation(countryCode: $countryCode) {
+    error
+    country {
+      ...CountrySnipppet
+      cities {
+        ...CitySnippet
+      }
+    }
+  }
+}
