@@ -30,7 +30,7 @@ interface Props {
 }
 
 const ProductPreview: React.FC<Props> = ({ id }) => {
-  const [countryCode, setCountryCode] = useState("");
+  // const [countryCode, setCountryCode] = useState("");
   const { data: meData, loading: meLoading, error: meError } = useMeQuery();
   const {
     data,
@@ -39,21 +39,21 @@ const ProductPreview: React.FC<Props> = ({ id }) => {
   } = useGetProductQuery({ variables: { id } });
   const [currentImage, setCurrentImage] = useState("");
 
-  const {
-    data: userLocationData,
-    error: userLocationError,
-    loading: userLocationLoading,
-  } = useUserLocationQuery({ variables: { countryCode }, skip: !countryCode });
+  // const {
+  //   data: userLocationData,
+  //   error: userLocationError,
+  //   loading: userLocationLoading,
+  // } = useUserLocationQuery({ variables: { countryCode }, skip: !countryCode });
 
   // loading state
-  const loading = productLoading && userLocationLoading && meData;
-  const error = userLocationError && productError && meError;
+  const loading = productLoading && meLoading;
+  const error = productError && meError;
 
-  React.useEffect(() => {
-    const countryCode = JSON.parse(localStorage.getItem("countryCode"));
+  // React.useEffect(() => {
+  //   const countryCode = JSON.parse(localStorage.getItem("countryCode"));
 
-    setCountryCode(countryCode || "ML");
-  }, []);
+  //   setCountryCode(countryCode || "ML");
+  // }, []);
 
   React.useEffect(() => {
     if (data) {

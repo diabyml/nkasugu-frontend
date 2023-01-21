@@ -65,7 +65,10 @@ const ProductDetail: React.FC<Props> = ({ slug }) => {
 
   // loading state
   const loading =
-    productLoading && similarCategroyLoading && userLocationLoading && meData;
+    productLoading &&
+    similarCategroyLoading &&
+    userLocationLoading &&
+    meLoading;
   const error =
     userLocationError && productError && similarProductsError && meError;
 
@@ -309,7 +312,7 @@ const ProductDetail: React.FC<Props> = ({ slug }) => {
           >
             {(meData?.me &&
               meData?.me.username === data?.product.user.username) ||
-            meData.me.role === "admin" ? (
+            meData?.me?.role === "admin" ? (
               <ProductActions product={data?.product} />
             ) : null}
             <Heading fontFamily={"suise"} size={"lg"} color="main">

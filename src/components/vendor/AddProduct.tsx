@@ -58,11 +58,11 @@ const AddProduct: React.FC<Props> = ({ countryCode }) => {
   const [addProduct, { loading: addProductLoading }] = useAddProductMutation();
 
   const { data: user, loading: userLoading, error: userError } = useMeQuery();
-  const {
-    data: userLocation,
-    loading: userLocationLoading,
-    error: userLocationError,
-  } = useUserLocationQuery({ variables: { countryCode } });
+  // const {
+  //   data: userLocation,
+  //   loading: userLocationLoading,
+  //   error: userLocationError,
+  // } = useUserLocationQuery({ variables: { countryCode } });
 
   const {
     data: categories,
@@ -82,8 +82,8 @@ const AddProduct: React.FC<Props> = ({ countryCode }) => {
   });
 
   // required data loading and error state
-  const loading = userLoading && userLocationLoading && categoriesLoading;
-  const error = userError && userLocationError && categoriesError;
+  const loading = userLoading && categoriesLoading;
+  const error = userError && categoriesError && subCategoriesError;
 
   const getProductSlug = () => {
     const category = subCategories?.categories.find(
@@ -389,7 +389,8 @@ const formSchema = yup.object().shape({
     .required("Entrez le nom du produit")
     .matches(
       // /^[a-zA-Z0-9@]+$/,
-      /^[A-Za-z\s]*$/,
+      // /^[A-Za-z\s]*$/,
+      /^[a-zA-Z0-9\s]*$/,
       "Le nom ne doit pas contenir de caratere speciaux"
     ),
   price: yup.string().required("Entrez un prix"),

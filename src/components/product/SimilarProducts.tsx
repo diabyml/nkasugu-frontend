@@ -44,7 +44,8 @@ const SimilarProducts: React.FC<Props> = ({
       {/* repeat(auto-fit, minmax(200px, 1fr)) */}
       <Grid
         templateColumns={{
-          base: "repeat(2,200px)",
+          base: "1fr",
+          md: "repeat(2,200px)",
         }}
         justifyContent={"center"}
         gap={2}
